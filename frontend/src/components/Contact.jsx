@@ -15,6 +15,7 @@ import { profile } from '../data/portfolioData.js'
 import './Contact.css'
 
 const initialForm = { name: '', email: '', subject: '', message: '' }
+const API_URL = import.meta.env.VITE_API_URL || ''
 
 function validate(form) {
   const errors = {}
@@ -63,7 +64,7 @@ function Contact() {
     setServerError('')
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

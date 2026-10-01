@@ -9,6 +9,9 @@ import { errorHandler, notFound } from './middleware/errorHandler.js'
 const app = express()
 const PORT = process.env.PORT || 5000
 
+// Required on Render/Railway etc. so rate limiting sees the real visitor IP
+app.set('trust proxy', 1)
+
 // --- Middleware ---
 app.use(helmet())
 app.use(express.json({ limit: '10kb' }))
