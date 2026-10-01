@@ -1,0 +1,78 @@
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+}
+
+.course-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.course-icon-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.course-name {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.course-platform {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+}
+
+.course-date-badge {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.course-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.course-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--pass);
+  transition: opacity 0.2s ease;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.course-link:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 860px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+}

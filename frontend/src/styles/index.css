@@ -1,0 +1,340 @@
+/* =====================================================================
+   DESIGN TOKENS & MODERN TYPOGRAPHY
+   Fresh, professional dark slate/obsidian palette (replacing old navy blue)
+===================================================================== */
+:root {
+  /* Neutral Canvas & Surfaces */
+  --bg: #090a0f;
+  --bg-subtle: #0d0f15;
+  --surface: #12151e;
+  --surface-hover: #171b26;
+  --surface-2: #1b202e;
+  --surface-3: #22283a;
+
+  /* Crisp Hairline Borders */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-accent: rgba(59, 130, 246, 0.35);
+
+  /* High Contrast Typography */
+  --text: #f1f5f9;
+  --text-sub: #94a3b8;
+  --text-faint: #64748b;
+
+  /* Executive Brand Accents */
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-dim: rgba(59, 130, 246, 0.12);
+
+  /* Semantic Test Status */
+  --pass: #10b981;
+  --pass-hover: #34d399;
+  --pass-dim: rgba(16, 185, 129, 0.12);
+  --pass-border: rgba(16, 185, 129, 0.28);
+
+  --amber: #f59e0b;
+  --amber-dim: rgba(245, 158, 11, 0.12);
+  --amber-border: rgba(245, 158, 11, 0.28);
+
+  --fail: #f43f5e;
+  --fail-dim: rgba(244, 63, 94, 0.12);
+
+  /* Typefaces */
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Layout & Geometry */
+  --max-width: 1120px;
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.45);
+  --shadow-hover: 0 12px 32px -4px rgba(0, 0, 0, 0.6);
+}
+
+/* Base reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.08), transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.04), transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section {
+  padding: 104px 0;
+  scroll-margin-top: 80px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+/* Section Header Typography */
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--pass);
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  background: var(--pass-dim);
+  border: 1px solid var(--pass-border);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+}
+
+.section-eyebrow::before {
+  content: "//";
+  color: var(--text-faint);
+  font-weight: 600;
+}
+
+.section-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+.section-intro {
+  color: var(--text-sub);
+  max-width: 640px;
+  margin-bottom: 52px;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+/* =====================================================================
+   BUTTONS
+===================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--pass);
+  color: #041209;
+  box-shadow: 0 2px 10px rgba(16, 185, 129, 0.25);
+}
+
+.btn-primary:hover {
+  background: var(--pass-hover);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline:hover {
+  border-color: var(--pass);
+  color: var(--pass);
+  background: var(--pass-dim);
+  transform: translateY(-1px);
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.25);
+}
+
+.btn-accent:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  color: var(--text-sub);
+  padding: 11px 16px;
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* =====================================================================
+   CARDS & BADGES
+===================================================================== */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-sub);
+  transition: all 0.2s ease;
+}
+
+.badge-pass {
+  color: var(--pass);
+  background: var(--pass-dim);
+  border-color: var(--pass-border);
+}
+
+.badge-amber {
+  color: var(--amber);
+  background: var(--amber-dim);
+  border-color: var(--amber-border);
+}
+
+.badge-accent {
+  color: var(--accent);
+  background: var(--accent-dim);
+  border-color: var(--border-accent);
+}
+
+/* =====================================================================
+   RESPONSIVE DESIGN
+===================================================================== */
+@media (max-width: 900px) {
+  section {
+    padding: 76px 0;
+  }
+  .container {
+    padding: 0 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  section {
+    padding: 60px 0;
+  }
+  .container {
+    padding: 0 16px;
+  }
+  .section-intro {
+    margin-bottom: 36px;
+  }
+}

@@ -1,0 +1,148 @@
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.exp-card {
+  padding: 28px;
+}
+
+.exp-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.exp-title-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.exp-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exp-role {
+  font-family: var(--font-sans);
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.exp-org {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  color: var(--text-sub);
+}
+
+.exp-duration {
+  font-size: 0.78rem;
+}
+
+.exp-responsibilities {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.exp-responsibilities li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.55;
+}
+
+.exp-check {
+  color: var(--pass);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.exp-achievement-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  color: #fde68a;
+  font-size: 0.85rem;
+}
+
+/* Open to Opportunities Banner */
+.exp-open-banner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 34px;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+  border: 1px solid var(--border-strong);
+}
+
+.exp-open-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-lg);
+  background: var(--pass-dim);
+  border: 1px solid var(--pass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.exp-status-pill {
+  margin-bottom: 12px;
+}
+
+.exp-open-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.exp-open-desc {
+  color: var(--text-sub);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin-bottom: 20px;
+}
+
+.exp-open-cta {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .exp-open-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

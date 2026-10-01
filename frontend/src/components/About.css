@@ -1,0 +1,141 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.about-summary-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.about-summary-text p {
+  color: #cbd5e1;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.about-summary-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-goals-grid {
+  display: grid;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.about-goal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--surface-2);
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.about-goal-icon {
+  background: var(--surface);
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+}
+
+.about-goal-label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.about-goal-text {
+  font-size: 0.92rem;
+  color: var(--text-sub);
+  line-height: 1.55;
+}
+
+/* Right Card */
+.about-facts-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.about-subhead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.about-facts-title {
+  font-size: 0.95rem;
+  font-family: var(--font-mono);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.about-tags-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-tags-list .badge {
+  padding: 8px 12px;
+  font-size: 0.84rem;
+  justify-content: flex-start;
+}
+
+.about-education-highlight {
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.about-edu-box {
+  background: var(--surface-2);
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.about-degree-name {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.96rem;
+  margin-bottom: 10px;
+}
+
+.about-edu-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.about-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
